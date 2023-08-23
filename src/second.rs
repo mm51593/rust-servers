@@ -1,4 +1,7 @@
-use std::{net::{TcpListener, TcpStream}, io::{self, Read, Write}};
+use std::{
+    io::{self, Read, Write},
+    net::{TcpListener, TcpStream},
+};
 
 // Multi-threaded server
 pub fn main() {
@@ -33,7 +36,7 @@ fn handle_connection(mut connection: TcpStream) -> io::Result<()> {
             println!("client disconnected unexpectedly");
             return Ok(());
         }
-        
+
         // increment number of read bytes
         read += num_bytes;
 
